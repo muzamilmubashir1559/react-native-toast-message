@@ -88,17 +88,17 @@ export function AnimatedContainer({
     keyboardOffset
   });
 
-  const onDismiss = React.useCallback(() => {
-    log('Swipe, dismissing');
-    animate(0);
-    onHide();
-  }, [animate, log, onHide]);
+  // const onDismiss = React.useCallback(() => {
+  //   log('Swipe, dismissing');
+  //   animate(0);
+  //   onHide();
+  // }, [animate, log, onHide]);
 
-  const onRestore = React.useCallback(() => {
-    log('Swipe, restoring to original position');
-    animate(1);
-    onRestorePosition();
-  }, [animate, log, onRestorePosition]);
+  // const onRestore = React.useCallback(() => {
+  //   log('Swipe, restoring to original position');
+  //   animate(1);
+  //   onRestorePosition();
+  // }, [animate, log, onRestorePosition]);
 
   const computeNewAnimatedValueForGesture = React.useCallback(
     (gesture: PanResponderGestureState) => {
@@ -111,8 +111,8 @@ export function AnimatedContainer({
   const { panResponder } = usePanResponder({
     animatedValue,
     computeNewAnimatedValueForGesture,
-    onDismiss,
-    onRestore
+    // onDismiss,
+    // onRestore
   });
 
   React.useLayoutEffect(() => {
